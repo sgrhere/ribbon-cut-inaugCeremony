@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IT Club Formation</title>
+  <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    .ribbon-wrapper {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ribbon-half {
+      width: 50%;
+      height: 350px;
+      background: rgb(0, 71, 171);
+      color: white;
+      font-weight: bold;
+      font-size: 80px;
+      display: flex;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      align-items: center;
+      justify-content: right;
+      cursor: pointer;
+      position: relative;
+      transition: transform 1s ease-in;
+    }
+
+    .ribbon-half:first-child {
+      justify-content: right;
+      padding-right: 20px;
+      background-color: #c62128;
+      background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+
+    }
+
+    .ribbon-half:nth-child(2) {
+      justify-content: left;
+      padding-left: 20px;
+      background-color: #c62128;
+      background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+
+    }
+
+    .left-half {
+      border-right: 2px dashed white;
+      text-align: right;
+
+    }
+
+    .right-half {
+      border-left: 2px dashed white;
+      align-items: left;
+
+    }
+
+    .slide-left {
+      transform: translateX(-100%);
+    }
+
+    .slide-right {
+      transform: translateX(100%);
+    }
+
+    .image-container {
+      height: 100vh;
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ribbon-wrapper" id="ribbon">
+    <div class="ribbon-half left-half" id="leftHalf"> Inauguration</div>
+    <div class="ribbon-half right-half" id="rightHalf">Ceremony</div>
+  </div>
+
+  <div class="image-container">
+    <!-- Background image area -->
+  </div>
+
+  <script>
+    const left = document.getElementById('leftHalf');
+    const right = document.getElementById('rightHalf');
+    const ribbon = document.getElementById('ribbon');
+
+    function cutRibbon() {
+      left.classList.add('slide-left');
+      right.classList.add('slide-right');
+
+      setTimeout(() => {
+        ribbon.remove();
+      }, 1200);
+    }
+
+    left.addEventListener('click', cutRibbon);
+    right.addEventListener('click', cutRibbon);
+  </script>
+
+</body>
+
+</html>
