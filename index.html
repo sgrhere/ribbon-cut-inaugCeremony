@@ -3,13 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>IT Club Formation</title>
+  <title>By NLIT Club</title>
   <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
   <style>
     body {
       margin: 0;
       font-family: sans-serif;
       overflow-x: hidden;
+      overflow-y: hidden;
       height: 100vh;
     }
 
@@ -19,7 +20,7 @@
       left: 0;
       transform: translateY(-50%);
       width: 100%;
-      height: 100px;
+      height: 400px;
       z-index: 1000;
       display: flex;
       justify-content: center;
@@ -28,7 +29,7 @@
 
     .ribbon-half {
       width: 50%;
-      height: 350px;
+      height: 400px;
       background: rgb(0, 71, 171);
       color: white;
       font-weight: bold;
@@ -72,16 +73,17 @@
 
     .slide-left {
       transform: translateX(-100%);
+      transition-duration: 2s;
     }
 
     .slide-right {
       transform: translateX(100%);
+      transition-duration: 2s;
     }
 
     .image-container {
       height: 100vh;
-      background-image: url('banner.jpg');
-      background-size: cover;
+      width: 100vw;
       background-position: center;
     }
   </style>
@@ -95,7 +97,7 @@
   </div>
 
   <div class="image-container">
-    <!-- Background image area -->
+    <img src="banner.jpg" alt="Banner" style="width: 100%; height: 100%; object-fit: cover;">
   </div>
 
   <script>
@@ -109,7 +111,7 @@
 
       setTimeout(() => {
         ribbon.remove();
-      }, 1200);
+      }, 2000);
     }
 
     left.addEventListener('click', cutRibbon);
